@@ -1,0 +1,67 @@
+Part-1
+*******
+Now to work with docker you can use the terminal
+Initially running docker needs commands
+  * use –help
+  * Use any cheatsheet from the web 
+  Refer here -- https://dockerlabs.collabnix.com/docker/cheatsheet/
+  Refer Here -- https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf
+
+Install Docker on Linux
+-----------------------
+We need an linux instance. We will be create a linux instance in
+Refer here -- AWS Cloud 
+Ubuntu:
+------
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+sudo usermod -aG docker <username> #$USER
+exit
+# relogin
+Type 'docker -v'
+Type 'docker info'
+
+Docker Image and Container Creation Basics
+------------------------------------------
+Lets see the list of the images in the newly installed docker
+'docker image ls'
+Downloading the image from registry is called as pull
+The image name has two components <name-of-image>:<tag>
+name of the image represents application
+tag represents the version
+If you dont pass the tag, docker will consider tag as latest so
+If you have written image name as httpd == 'httpd:latest'
+Now lets pull the 'jenkins/jenkins' image -----    'docker image pull jenkins/jenkins'
+Lets create a jenkins container 'docker container run -d <image>:<tag>'
+'docker container run -d jenkins/jenkins'
+'docker container ls'
+To access the application inside the docker we have to do port forwarding 'docker container run -d -p <hostport>:<containerport> <imageid>:<tag>'
+refer here --https://i0.wp.com/directdevops.blog/wp-content/uploads/2022/01/docker19.png?w=800&ssl=1
+
+Part-2
+******
+To run a container we need an image.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
