@@ -1,0 +1,41 @@
+There was a organization called as dot cloud who were working on same PAAS application, to test this application they have created docker.
+Docker was made opensource and there was lot of community intrest in Docker and then became orgnization’s major product.
+The organization was renamed as Docker Inc
+Application Deployment Options
+------------------------------
+   * We can deploy our application on
+   * Physical Server
+   * Virtual Machine
+   * Containers
+By experimenting we have understood, Container has everything which makes applications believe that they are running in OS
+
+Containers
+----------
+ For long time, big web-scale organizations like Google have been using container technologies to overcome the shortcomings of VM Model.
+ Containers on the single host share the host OS
+ 
+The Docker Technology (HOW Docker Works Internally)
+---------------------**------------------------------
+There are three things to be aware of when we are referring to docker as a technology
+ * The runtime
+ * The daemon/Engine
+ * The orchestrator
+ Refer here -- https://i0.wp.com/directdevops.blog/wp-content/uploads/2022/01/docker6.png?w=800&ssl=1
+ * To interact with docker we have the docker client
+ * Workflow of Container Creation
+ Refer here -- https://i0.wp.com/directdevops.blog/wp-content/uploads/2022/01/docker7.png?w=800&ssl=1
+ * When the user executes the command to create container 'docker container run -d -P httpd' on the newly installed docker host
+ * docker client forwards the request to docker daemon
+ * docker daemon checks for the presence of images in the local repository. In this case the local images didn’t have the image httpd
+ * Docker forwards the request to the configured registry. The default registry that is configred is docker hub (official website). 
+   The image is searched in the configured registry and if not found error is shown to the user.
+ * If the image is found then it is downloaded from docker registry to local images repository
+ * Using the docker image the container is created (resources will be allocated)
+ * Now lets see what happens the user executed the command 'docker container run -d -P httpd' again
+ * docker client forwards the request to docker daemon
+ * docker daemon checks for the presence of image httpd in local registry & since it is already downloaded in the 4 step above.
+ * docker daemon creates a container with the existing image.
+
+
+
+ 
